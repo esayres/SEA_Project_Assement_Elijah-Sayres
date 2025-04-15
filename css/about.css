@@ -63,7 +63,7 @@ body {
 }
 
 .aboutimg img{
-  max-width: 50%;
+  max-width: 30%;
   height: 450px;
   display: block; /* Optional: removes extra space below image */
   padding-top: 20px;
