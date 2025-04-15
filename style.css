@@ -4,33 +4,109 @@ body {
   padding: 0;
 }
 
+.container {
+    display: flex;
+    min-height: 100vh; /* make it full height of the page */
+  }
+  
+
 .main-header {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(8, 61, 4, 0.425);
   padding-bottom: 10px;
+  border-bottom: 4px solid rgb(95, 94, 94);
 }
+
+
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    font-family: Manrope;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+  }
+
+  .sidebar a {
+    color: inherit;         /* Use the same color as surrounding text */
+    text-decoration: none;  /* Removes underline */
+  
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
 
 .title {
   text-align: center;
   margin: 0;
   font-size: 8em;
-  font-family: "Helvetica";
+  font-family: "manrope";
   font-weight: normal;
-  color: white;
+  color: rgb(43, 43, 43)
 }
+
+
+.card-title{
+  margin-bottom: 25px;
+}
+
+.content {
+    flex: 1; /* take up the rest of the space */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #searchInput {
+    padding: 0.5rem;
+    margin-left: 25px;
+    margin-bottom: 0rem;
+    margin: auto;
+    width: 910px;
+    height: 50px;
+    font-family: Manrope;
+    font-size: 2rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+
 
 #card-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 20px;
 }
 
 .card {
-  width: 300px;
+  
+  width: 900px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 5px;
+  margin: auto;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
 }
+
+.card-content ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 8px 20px;
+    padding-left: 20px; /* space for bullets */
+    margin: 0;
+    margin-right: 80px;
+    list-style-type: disc; /* keep bullets */
+  }
 
 .card-content {
   padding: 20px;
@@ -45,14 +121,42 @@ body {
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 0px;
 }
 
 .footer {
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 10px;
+}
+
+
+.show-more-button {
+  margin: auto;
+  width: 60.5%;
+  padding: 0px;
+  font-family: "Verdana";
+  /*color: #777; */
+}
+
+#results {
+  margin: auto;
+  font-family: Arial, sans-serif;
+  color: #142800;
+}
+
+#creator {
+  margin: auto;
+  font-family: Arial, sans-serif;
+  color: #8d8d8b;
+}
+
+.favorite-button{
+  color: white;
+  border-color: white;
+  background-color: white;
+  float:right;
 }
 
 button {
@@ -67,4 +171,18 @@ button {
   font-size: 22px;
   cursor: pointer;
   margin: 5px;
+}
+
+#filters {
+  display: flex;
+  gap: 1rem;
+  justify-content: center; /* centers the dropdowns */
+  margin: 1rem auto;
+}
+
+#filters select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #aaa;
 }
