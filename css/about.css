@@ -1,0 +1,97 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh; /* make it full height of the page */
+  }
+  
+
+.main-header {
+  background-color: rgba(8, 61, 4, 0.425);
+  padding-bottom: 10px;
+  border-bottom: 4px solid rgb(95, 94, 94);
+}
+
+
+.sidebar {
+    width: 500px;
+    background-color: #f4f4f4;
+    font-family: Manrope;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+  }
+
+  .sidebar a {
+    color: inherit;         /* Use the same color as surrounding text */
+    text-decoration: none;  /* Removes underline */
+  
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+
+.title {
+  text-align: center;
+  margin: 0;
+  font-size: 8em;
+  font-family: "manrope";
+  font-weight: normal;
+  color: rgb(43, 43, 43)
+}
+
+
+
+
+.aboutimg{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.aboutimg img{
+  max-width: 50%;
+  height: 450px;
+  display: block; /* Optional: removes extra space below image */
+  padding-top: 20px;
+  border: 10px solid rgba(231, 228, 228, 0.596);
+  border-radius: 10%;
+  background-color: rgba(231, 228, 228);
+}
+
+.about-us {
+  font-size: 20px;
+  background-color:  rgb(231, 228, 228);
+  border-radius: 20%;
+  border: 20px solid rgba(231, 228, 228, 0.596);
+  font-family: Helvetica;
+  display: flex;
+  margin: 2rem auto;
+  justify-content: center;
+  margin: 3%;
+
+}
+
+#creator {
+  margin: auto;
+  font-family: Arial, sans-serif;
+  color: #8d8d8b;
+  display: flex;
+  justify-content: center;
+}
+
+
+
