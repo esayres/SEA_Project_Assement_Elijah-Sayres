@@ -50,7 +50,7 @@ function editCardContent(card, index) {
   
     // Add an 'unfavorite' button to the card
     const favoriteIcon = card.querySelector('.favorite-icon');
-    favoriteIcon.src = '../data/favorite-button-lit.png';  // This will show as lit for all favorites
+    favoriteIcon.src = 'data/favorite-button-lit.png';  // This will show as lit for all favorites
 
     // Add an event listener to remove the card from favorites
     const unfavoriteButton = card.querySelector('.favorite-button'); // Assuming there is an unfavorite button

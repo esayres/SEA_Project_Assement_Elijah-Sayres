@@ -100,7 +100,7 @@ let currentCardIndex = 0;
 
 // loading and parsing csv files (used external Dataset from csv file)
 // Loaded from data/hikingTrails_TheGorge.csv
-fetch('../data/HikingTrails_TheGorge.csv')
+fetch('data/HikingTrails_TheGorge.csv')
 .then(response => response.text())
 .then(hikingText => {
     const cleanedCSV = hikingText.replace(/(\d),(\d)/g, '$1$2'); // this fixes the inconsitant number format in the dataset (1,600 -> 1600)
@@ -204,7 +204,7 @@ function editCardContent(card, index) {
   
   let storedFavorites = JSON.parse(localStorage.getItem("favoriteTrailNames")) || [];
   let islit = storedFavorites.includes(trailNames[index]) ? 1 : 0;
-  favoriteIcon.src = islit === 1 ? '../data/favorite-button-lit.png' : '../data/favorite-button-unlit.png';
+  favoriteIcon.src = islit === 1 ? 'data/favorite-button-lit.png' : 'data/favorite-button-unlit.png';
 
   favoriteButton.addEventListener('click', () => {
     let storedFavorites = JSON.parse(localStorage.getItem("favoriteTrailNames")) || [];
@@ -224,7 +224,7 @@ function editCardContent(card, index) {
       
       islit = 1
       console.log("FAVORITE TRAILS (WITH ITEM LIT)", favoriteTrailNames) // useless
-      favoriteIcon.src = '../data/favorite-button-lit.png';
+      favoriteIcon.src = 'data/favorite-button-lit.png';
       
       storedFavorites.push(trailNames[index]);
       localStorage.setItem("favoriteTrailNames", JSON.stringify(favoriteTrailNames));
@@ -256,7 +256,7 @@ function editCardContent(card, index) {
       
       islit = 0
       console.log("FAVORITE TRAILS (UNLIT REMOVED ITEM)", favoriteTrailNames) // useless
-      favoriteIcon.src = '../data/favorite-button-unlit.png';
+      favoriteIcon.src = 'data/favorite-button-unlit.png';
 
       storedFavorites = storedFavorites.filter(name => name !== trailNames[index]);
       localStorage.setItem("favoriteTrailNames", JSON.stringify(favoriteTrailNames));
