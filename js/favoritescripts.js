@@ -121,7 +121,6 @@ function getDistanceCategory(value) {
   }
   
   function getBackpackableValue(backpack, crowded, family) {
-    //console.log("crowded values: " + favoriteCrowded)
     let vals = [];
     if (backpack === 'Yes') vals.push("Yes");
     if (backpack === 'No') vals.push("No");
@@ -130,7 +129,6 @@ function getDistanceCategory(value) {
     
     if (family === 'Yes') vals.push("YesFamilyFriendly");
     if (family === 'No') vals.push("NoFamilyFriendly");
-    console.log("crowded values (actuall val): " + vals)
     return vals;
   }
   

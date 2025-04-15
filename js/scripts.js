@@ -23,28 +23,8 @@
  *
  */
 
-// current bugs:
-// search results numbers dont update when using searchbar -- (Works/Fixed)
-// after favoriting a trail, then using search bar (doesnt remember what trail was favorited [THIS IS ONLY THE LIT ICON NOT THE ARRAY]) (Works/Fixed)
 
-
-/*
-WHAT NEEDS TO BE DONE:
-deigin a basic page for (about, favorites, and contact) order of importance (favorites, about, contact) -- (completed)
-
-make sure filters work and search bar bugs are fixed (Working)
-clean up js code --- (in-Progress)
-make pages look even better later on --- (in-Progress)
-
-
-WHAT NEEDS TO BE DONE FIRST ARE
-filters working correctly, and favorites page displaying the data correctly (TOP PROCITY) --- (completed)
-
-
-
-*/
-
-
+// creating array's to seperate data
 const trailNames = [];
 const trailTypes = [];
 const distance = [];
@@ -86,9 +66,6 @@ window.onload = () => {
   } catch (error) {
     console.error("Error reading from localStorage:", error);
   }
-
-  // (optional) render favorites to the page here if this is the favorites page
-  console.log("Favorites loaded from localStorage", favoriteTrailNames);
 };
 
 // for infinite scrolling
@@ -124,7 +101,6 @@ fetch('data/HikingTrails_TheGorge.csv')
         // move next line
     }
     for (let i = 0; i < Crowded.length; i++){
-      console.log
       if(Crowded[i] == "Yes\r"){
         Crowded[i] = "Yes";
       } else if(Crowded[i] == "No\r"){
@@ -134,7 +110,6 @@ fetch('data/HikingTrails_TheGorge.csv')
         highPoint[i] = "0 feet";
       }
     }
-    //console.log("data", difficulty); // TESTER to see if arrays are working
 })
 .then(showCards)
 
@@ -145,13 +120,11 @@ fetch('data/HikingTrails_TheGorge.csv')
 
 // This function adds cards the page to display the data in the array
 function showCards() {
-  //console.log("WORKING!")
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
   const templateCard = document.querySelector(".card");
 
   const endIndex = Math.min(currentCardIndex + cardsPerLoad, trailNames.length);
-  console.log
   for (let i = 0; i < endIndex; i++) {
     const nextCard = templateCard.cloneNode(true); // Copy the template card
     editCardContent(nextCard, i); // Edit title and image
@@ -223,7 +196,6 @@ function editCardContent(card, index) {
       favoriteCrowded.push(Crowded[index]);
       
       islit = 1
-      console.log("FAVORITE TRAILS (WITH ITEM LIT)", favoriteTrailNames) // useless
       favoriteIcon.src = 'data/favorite-button-lit.png';
       
       storedFavorites.push(trailNames[index]);
@@ -255,7 +227,6 @@ function editCardContent(card, index) {
       favoriteCrowded.splice(removeIndex, 1);
       
       islit = 0
-      console.log("FAVORITE TRAILS (UNLIT REMOVED ITEM)", favoriteTrailNames) // useless
       favoriteIcon.src = 'data/favorite-button-unlit.png';
 
       storedFavorites = storedFavorites.filter(name => name !== trailNames[index]);
@@ -270,9 +241,6 @@ function editCardContent(card, index) {
       localStorage.setItem("favoriteBackpackable", JSON.stringify(favoriteBackpackable));
       localStorage.setItem("favoriteCrowded", JSON.stringify(favoriteCrowded));
     }
-
-    
-
   });
 }
 
